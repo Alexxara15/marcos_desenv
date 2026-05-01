@@ -71,7 +71,7 @@ const Onboarding = ({ onComplete }) => {
     return (
       <div className="animate-fade-in" style={{ backgroundColor: '#f0f9ff', minHeight: '100vh', display: 'flex', flexDirection: 'column', padding: '2rem 1.5rem', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <img src="/assets/logo.png" alt="MARCOS" style={{ width: '100px', height: 'auto', marginBottom: '1rem', margin: '0 auto' }} />
+          <img src="/assets/inicio1.png" alt="MARCOS" style={{ width: '100px', height: 'auto', marginBottom: '1rem', margin: '0 auto', objectFit: 'contain' }} />
           <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#1e3a8a' }}>Vamos começar?</h1>
           <p style={{ color: '#64748b', fontSize: '0.95rem', marginTop: '0.5rem' }}>Para personalizar sua experiência, crie o primeiro perfil.</p>
         </div>
