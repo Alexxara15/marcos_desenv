@@ -18,35 +18,35 @@ const Onboarding = ({ onComplete }) => {
       text: "O aplicativo perfeito para acompanhar cada etapa mágica do desenvolvimento do seu filho.",
       color: "#1e3a8a", // Dark Blue
       bgColor: "#eff6ff",
-      icon: "✨"
+      image: "/assets/inicio1.png"
     },
     {
       title: "Desenvolver",
       text: "Acompanhe os marcos de desenvolvimento de 0 a 6 anos com um checklist fácil e rápido.",
       color: "#d97706", // Yellow/Orange
       bgColor: "#fffbeb",
-      icon: "📈"
+      image: "/assets/inicio2.png"
     },
     {
       title: "Brincar",
       text: "Avalie a interação e o comportamento do seu filho de forma simples para identificar sinais importantes.",
       color: "#7e22ce", // Purple
       bgColor: "#faf5ff",
-      icon: "🧩"
+      image: "/assets/inicio3.png"
     },
     {
       title: "Crescer",
       text: "Mantenha o calendário de vacinação em dia e registre as consultas e o peso do bebê.",
       color: "#1d4ed8", // Blue
       bgColor: "#eff6ff",
-      icon: "⚖️"
+      image: "/assets/inicio4.png"
     },
     {
       title: "Aprender",
       text: "Receba dicas valiosas e sugestões de atividades para estimular o aprendizado em casa.",
       color: "#047857", // Green
       bgColor: "#ecfdf5",
-      icon: "💡"
+      image: "/assets/inicio5.png"
     }
   ];
 
@@ -117,12 +117,19 @@ const Onboarding = ({ onComplete }) => {
     <div className="animate-fade-in" style={{ backgroundColor: slide.bgColor, minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '2rem', transition: 'background-color 0.5s ease' }}>
       
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%', maxWidth: '400px' }}>
-        {step === 0 && (
-          <img src="/assets/logo.png" alt="MARCOS" style={{ width: '180px', height: 'auto', marginBottom: '2rem' }} />
-        )}
-        {step > 0 && (
-          <div style={{ fontSize: '5rem', marginBottom: '1.5rem' }}>{slide.icon}</div>
-        )}
+        <img 
+          src={slide.image} 
+          alt={slide.title} 
+          onError={(e) => {
+            // Fallback caso a imagem ainda não exista na pasta
+            e.target.style.display = 'none';
+            e.target.nextSibling.style.display = 'block';
+          }}
+          style={{ width: step === 0 ? '180px' : '150px', height: 'auto', marginBottom: '2rem', objectFit: 'contain' }} 
+        />
+        <div style={{ display: 'none', fontSize: '5rem', marginBottom: '1.5rem', color: slide.color }}>
+          {step === 0 ? '✨' : '⭐'}
+        </div>
         
         <h1 style={{ fontSize: '1.8rem', fontWeight: 900, color: slide.color, textAlign: 'center', marginBottom: '1rem', lineHeight: 1.2 }}>
           {slide.title}
