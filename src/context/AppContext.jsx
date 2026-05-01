@@ -35,7 +35,7 @@ export const AppProvider = ({ children }) => {
       growth: []
     };
     setChildrenProfiles([...childrenProfiles, newChild]);
-    if (!activeChildId) setActiveChildId(newChild.id);
+    setActiveChildId(newChild.id);
   };
 
   const updateChild = (childId, updatedData) => {
