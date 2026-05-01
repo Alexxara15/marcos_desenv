@@ -50,6 +50,14 @@ const Onboarding = ({ onComplete }) => {
     }
   ];
 
+  useEffect(() => {
+    // Preload das imagens para evitar atrasos na troca de tela na Vercel
+    slides.forEach(slide => {
+      const img = new Image();
+      img.src = slide.image;
+    });
+  }, []);
+
   const handleNext = () => {
     if (step < slides.length) {
       setStep(step + 1);
@@ -118,6 +126,7 @@ const Onboarding = ({ onComplete }) => {
       
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%', maxWidth: '400px' }}>
         <img 
+          key={step} // Força o React a remontar a imagem, limpando a antiga imediatamente
           src={slide.image} 
           alt={slide.title} 
           onError={(e) => {
