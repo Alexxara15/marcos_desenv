@@ -24,7 +24,7 @@ const NurseDashboard = () => {
 
   return (
     <div className="nurse-dashboard-page">
-      {/* Header com cor de fundo suave */}
+      {/* Header */}
       <header className="nurse-dash-header">
         <div className="nurse-dash-header-inner">
           <div className="nurse-dash-title-block">
@@ -52,10 +52,10 @@ const NurseDashboard = () => {
                 className={`nurse-tool-card ${isFullWidth ? 'nurse-tool-card--full' : ''}`}
                 style={{ backgroundColor: tool.bg, borderColor: tool.border }}
               >
-                <div className="nurse-tool-emoji">{tool.emoji}</div>
+                <div className="nurse-tool-emoji" style={{ fontSize: '38px' }}>{tool.emoji}</div>
                 <div className="nurse-tool-text">
-                  <h2 className="nurse-tool-title" style={{ color: tool.textColor }}>{tool.title}</h2>
-                  <p className="nurse-tool-desc">{tool.desc}</p>
+                  <h2 className="nurse-tool-title" style={{ color: tool.textColor, fontSize: '16px' }}>{tool.title}</h2>
+                  <p className="nurse-tool-desc" style={{ color: tool.textColor, opacity: 0.8 }}>{tool.desc}</p>
                 </div>
                 <div className="nurse-tool-arrow" style={{ color: tool.textColor }}>
                   <ChevronRight size={22} />
