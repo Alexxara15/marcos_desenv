@@ -32,9 +32,9 @@ const GrowthCalculator = () => {
 
   return (
     <div className="growth-calculator bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-      <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-        <div className="bg-sky-100 text-sky-600 p-2 rounded-xl">
-          <Activity size={24} />
+      <div className="flex flex-col md:flex-row items-center gap-6 mb-8 border-b border-sky-100 pb-6">
+        <div className="w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center bg-sky-100 shadow-inner">
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f4c8.svg" alt="Ícone de Crescimento" className="w-10 h-10 object-contain drop-shadow-sm" />
         </div>
         <h3 className="text-lg font-bold text-slate-800">Calculadora de Vigilância do Crescimento</h3>
       </div>

@@ -29,9 +29,9 @@ const PhysicalExamChecklist = () => {
 
   return (
     <div className="physical-exam bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-      <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-        <div className="bg-emerald-100 text-emerald-600 p-2 rounded-xl">
-          <Stethoscope size={24} />
+      <div className="flex flex-col md:flex-row items-center gap-6 mb-8 border-b border-emerald-100 pb-6">
+        <div className="w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center bg-emerald-100 shadow-inner">
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1fa7a.svg" alt="Ícone de Estetoscópio" className="w-10 h-10 object-contain drop-shadow-sm" />
         </div>
         <h3 className="text-lg font-bold text-slate-800">Checklist Rápido: Exame Físico</h3>
       </div>

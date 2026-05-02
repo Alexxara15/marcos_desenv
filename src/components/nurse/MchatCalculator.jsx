@@ -55,9 +55,9 @@ const MchatCalculator = () => {
 
   return (
     <div className="mchat-calculator bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-      <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
-        <div className="bg-indigo-100 text-indigo-600 p-2 rounded-xl">
-          <Brain size={24} />
+      <div className="flex flex-col md:flex-row items-center gap-6 mb-8 border-b border-indigo-100 pb-6">
+        <div className="w-16 h-16 shrink-0 rounded-2xl flex items-center justify-center bg-indigo-100 shadow-inner">
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f9e0.svg" alt="Ícone de Cérebro" className="w-10 h-10 object-contain drop-shadow-sm" />
         </div>
         <div>
           <h3 className="text-lg font-bold text-slate-800">Calculadora M-CHAT-R/F</h3>

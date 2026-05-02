@@ -74,9 +74,9 @@ const SummaryGenerator = () => {
   return (
     <div className="summary-generator bg-gradient-to-br from-indigo-50 to-sky-50 p-6 rounded-2xl shadow-sm border border-indigo-100">
       <div className="flex items-center justify-between mb-6 border-b border-indigo-200/50 pb-4">
-        <div className="flex items-center gap-3">
-          <div className="bg-indigo-600 text-white p-2 rounded-xl shadow-lg shadow-indigo-600/30">
-            <FileText size={24} />
+        <div className="flex items-center gap-4">
+          <div className="w-14 h-14 shrink-0 rounded-2xl flex items-center justify-center bg-indigo-100 shadow-inner">
+            <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f4cb.svg" alt="Ícone de Prancheta" className="w-8 h-8 object-contain drop-shadow-sm" />
           </div>
           <div>
             <h3 className="text-lg font-bold text-slate-800">Magia do Resumo</h3>
