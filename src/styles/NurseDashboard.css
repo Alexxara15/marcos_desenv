@@ -1,0 +1,239 @@
+/* ========================
+   NURSE DASHBOARD - Novo
+   ======================== */
+
+.nurse-dashboard-page {
+  min-height: 100vh;
+  background-color: #F0F9FF; /* Azul bebê suave */
+  font-family: 'Inter', sans-serif;
+  /* CRITICAL: Evitar overflow horizontal no mobile */
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Header */
+.nurse-dash-header {
+  background: linear-gradient(135deg, #38BDF8 0%, #3B82F6 100%);
+  padding: 28px 20px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.nurse-dash-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.nurse-dash-title-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nurse-dash-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  background: white;
+  padding: 8px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  flex-shrink: 0;
+}
+
+.nurse-dash-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin: 0 0 2px 0;
+  line-height: 1.2;
+}
+
+.nurse-dash-subtitle {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  margin: 0;
+}
+
+.nurse-dash-clear-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.2);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  backdrop-filter: blur(6px);
+}
+
+.nurse-dash-clear-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Main */
+.nurse-dash-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.nurse-dash-section-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #64748B;
+  margin-bottom: 14px;
+}
+
+/* Tools Grid */
+.nurse-tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nurse-tool-card {
+  border-radius: 20px;
+  border: 2px solid;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  min-width: 0; /* CRITICAL para não vazar no mobile */
+}
+
+.nurse-tool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+.nurse-tool-card:active {
+  transform: scale(0.98);
+}
+
+.nurse-tool-card--full {
+  grid-column: 1 / -1;
+}
+
+.nurse-tool-emoji {
+  font-size: 32px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.nurse-tool-text {
+  flex: 1;
+  min-width: 0; /* CRITICAL para evitar texto vazar */
+}
+
+.nurse-tool-title {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0 0 2px 0;
+  line-height: 1.3;
+}
+
+.nurse-tool-desc {
+  font-size: 12px;
+  color: #64748B;
+  font-weight: 500;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nurse-tool-arrow {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* Footer note */
+.nurse-dash-footer-note {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 12px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+/* ========================
+   RESPONSIVO: Mobile first
+   ======================== */
+@media (max-width: 480px) {
+  .nurse-dash-header {
+    padding: 22px 16px 26px;
+  }
+
+  .nurse-dash-title {
+    font-size: 20px;
+  }
+
+  .nurse-dash-logo {
+    height: 42px;
+  }
+
+  .nurse-dash-clear-btn {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .nurse-dash-main {
+    padding: 20px 12px 80px;
+  }
+
+  /* No celular vira 1 coluna */
+  .nurse-tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nurse-tool-card--full {
+    grid-column: 1;
+  }
+
+  .nurse-tool-emoji {
+    font-size: 28px;
+  }
+
+  .nurse-tool-title {
+    font-size: 14px;
+  }
+}
+
+/* ========================
+   LEGADO: classes antigas
+   (mantidas para não quebrar
+   outros componentes)
+   ======================== */
+.nurse-dashboard {
+  font-family: 'Inter', sans-serif;
+}
+.dashboard-header { background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%); }
+.cards-grid { display: flex; flex-direction: column; gap: 16px; }

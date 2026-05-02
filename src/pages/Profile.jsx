@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAppContext } from '../context/AppContext';
-import { PlusCircle, FileText, ChevronRight, Check, Sparkles, Smile, Baby, Trash2, Edit2, Link as LinkIcon, Settings, Bell, Moon, Shield } from 'lucide-react';
+import { PlusCircle, FileText, ChevronRight, Check, Sparkles, Smile, Baby, Trash2, Edit2, Link as LinkIcon, Settings, Bell, Moon, Shield, LogOut } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 import { calculateMchatScore, getRiskLevel } from '../data/mchat';
 import { milestonesData } from '../data/milestones';
@@ -8,7 +8,7 @@ import { milestonesData } from '../data/milestones';
 const avatarColors = ['#f59e0b', '#10b981', '#8b5cf6', '#1273eb', '#ec4899', '#14b8a6'];
 
 const Profile = () => {
-  const { childrenProfiles, activeChild, addChild, updateChild, deleteChild, setActiveChildId } = useAppContext();
+  const { childrenProfiles, activeChild, addChild, updateChild, deleteChild, setActiveChildId, logout } = useAppContext();
   
   const [showAddForm, setShowAddForm] = useState(false);
   const [newChildData, setNewChildData] = useState({ name: '', birthDate: '', isPremature: false, weeksPremature: 0 });
@@ -484,12 +484,25 @@ const Profile = () => {
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem', borderBottom: '1px solid #f1f5f9' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <Shield size={18} color="#64748b" />
                 <span style={{ fontWeight: 600, color: '#334155', fontSize: '0.95rem' }}>Privacidade e Dados</span>
               </div>
               <ChevronRight size={18} color="#cbd5e1" />
+            </div>
+
+            <div 
+              onClick={logout}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem', cursor: 'pointer', backgroundColor: '#fef2f2', transition: 'background-color 0.2s' }}
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#fee2e2'}
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#fef2f2'}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <LogOut size={18} color="#ef4444" />
+                <span style={{ fontWeight: 600, color: '#ef4444', fontSize: '0.95rem' }}>Sair / Trocar de Perfil</span>
+              </div>
+              <ChevronRight size={18} color="#fca5a5" />
             </div>
 
           </div>
